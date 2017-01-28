@@ -46,8 +46,8 @@ hypo=X*Theta';
  
  %------------------
  
-X_grad = ((M - Y) .* R) * Theta;
-Theta_grad = ((M - Y) .* R)' * X;
+X_grad = ((hypo - Y) .* R) * Theta;
+Theta_grad = ((hypo - Y) .* R)' * X;
 
 J = J + sum(sum(Theta.^2))*lambda/2 + sum(sum(X.^2))*lambda/2;
 X_grad = X_grad + lambda * X;
